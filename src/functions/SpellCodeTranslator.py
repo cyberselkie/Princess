@@ -1339,7 +1339,7 @@ def card_create_spell(spell_text):
     sc.paste(sct, (0, 48))
 
     # sc.show()
-    file_path = os.path.dirname(os.path.realpath(__file__)) + "\\" + spell_strings[0].lower().replace(" ", "_")
+    file_path = os.path.dirname(os.path.realpath(__file__)) + "/" + spell_strings[0].lower().replace(" ", "_")
     sc.save(format="PNG", fp=file_path + ".png")
 
     # BIGGER
