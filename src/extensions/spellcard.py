@@ -98,10 +98,10 @@ class Card(miru.Modal, title="Generate a spellcard."):
             await ctx.respond("Skill was not one of Dreams, Magic, or Misc!", flags=hikari.MessageFlag.EPHEMERAL)
 
         command_string = f"{name}|{desc}|{cost}|{skill}"
-        spell.card_create_spell(command_string)
+        filename = spell.card_create_spell(command_string)
+        print(filename)
 
-        filename = f"src/functions/{name.lower()}x10.png"
-        FILE_LIST.append(filename)
-        FILE_LIST.append(f"src/functions/{name.lower()}.png")
+        # filename = f"src/functions/{filename.lower()}x10.png"
+        # FILE_LIST.append(f"src/functions/{name.lower()}.png")
 
-        await ctx.respond("Your spell has been encoded.", attachment=filename)
+        await ctx.respond("Your spell has been encoded.")  # , attachment=filename)
