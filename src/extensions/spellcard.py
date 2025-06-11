@@ -99,6 +99,7 @@ class Card(miru.Modal, title="Generate a spellcard."):
 
         command_string = f"{name}|{desc}|{cost}|{skill}"
         spell.card_create_spell(command_string)
+        name = name.replace(" ", "_")
 
         filename = f"src/functions/{name.lower()}x10.png"
         FILE_LIST.append(filename)
