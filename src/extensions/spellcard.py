@@ -23,7 +23,6 @@ def clean_up(ctx: arc.Context[Any]) -> None:
 
 
 @spellcard.include
-@arc.with_hook(clean_up)
 @arc.slash_subcommand("create", "Generate a .dungeon spellcard.")
 async def spellcard_command(ctx: arc.GatewayContext, client: miru.Client = arc.inject()) -> None:
     spell_name, spell_desc, spell_cost, spell_skill = create_card_modal()
